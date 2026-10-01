@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eduardo | Mi página web</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {<a href="pagina2.html">
+    <button>Ver más</button>
+</a>
+            font-family: Arial, sans-serif;
+            background: #050816;
+            color: white;
+        }
+
+        /* =========================
+           BARRA DE NAVEGACIÓN
+        ========================= */
+
+        nav {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(5, 8, 22, 0.8);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+
+            color: #00eaff;
+
+            text-shadow:
+                0 0 10px #00eaff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #00eaff;
+
+            text-shadow:
+                0 0 10px #00eaff;
+        }
+
+        /* =========================
+           INICIO
+        ========================= */
+
+        .inicio {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #17244a 0%,
+                    #080b18 40%,
+                    #050816 75%
+                );
+        }
+
+        .contenido-inicio {
+            animation: aparecer 1.5s ease;
+        }
+
+        .inicio h1 {
+            font-size: clamp(50px, 10vw, 100px);
+
+            margin-bottom: 15px;
+
+            color: white;
+
+            text-shadow:
+                0 0 10px #00eaff,
+                0 0 30px #008cff;
+        }
+
+        .inicio h2 {
+            color: #00eaff;
+
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #cbd5e1;
+
+            line-height: 1.7;
+        }
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 30px;
+
+            border: 2px solid #00eaff;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .boton:hover {
+            background: #00eaff;
+
+            color: #050816;
+
+            box-shadow:
+                0 0 20px #00eaff;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+
+            font-size: 40px;
+
+            margin-bottom: 50px;
+
+            color: #00eaff;
+
+            text-shadow:
+                0 0 15px #00eaff;
+        }
+
+        /* =========================
+           SOBRE MI
+        ========================= */
+
+        .sobre {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            line-height: 1.8;
+
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           HABILIDADES
+        ========================= */
+
+        .habilidades {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .habilidad {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #0c1226;
+
+            border: 1px solid #1e3a5f;
+
+            border-radius: 15px;
+
+            transition: .3s;
+        }
+
+        .habilidad:hover {
+            transform: translateY(-10px);
+
+            border-color: #00eaff;
+
+            box-shadow:
+                0 0 20px rgba(0, 234, 255, .3);
+        }
+
+        .habilidad span {
+            font-size: 45px;
+
+            display: block;
+
+            margin-bottom: 15px;
+        }
+
+        .habilidad h3 {
+            margin-bottom: 10px;
+
+            color: #00eaff;
+        }
+
+        /* =========================
+           PROYECTOS
+        ========================= */
+
+        .proyectos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .proyecto {
+            padding: 30px;
+
+            background: #0c1226;
+
+            border-radius: 15px;
+
+            border: 1px solid #1e3a5f;
+
+            transition: .3s;
+        }
+
+        .proyecto:hover {
+            transform: scale(1.03);
+
+            border-color: #00eaff;
+        }
+
+        .proyecto h3 {
+            color: #00eaff;
+
+            margin-bottom: 15px;
+        }
+
+        .proyecto p {
+            color: #cbd5e1;
+
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            text-align: center;
+
+            background: #080b18;
+        }
+
+        .contacto p {
+            color: #cbd5e1;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #02030a;
+
+            color: #64748b;
+        }
+
+        /* =========================
+           ANIMACIÓN
+        ========================= */
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+
+                font-size: 13px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .titulo {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            EDUARDO
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#inicio">
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="#sobre">
+                    Sobre mí
+                </a>
+            </li>
+
+            <li>
+                <a href="#habilidades">
+                    Habilidades
+                </a>
+            </li>
+
+            <li>
+                <a href="#proyectos">
+                    Proyectos
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         INICIO
+    ========================= -->
+
+    <section
+        id="inicio"
+        class="inicio"
+        
+    >
+
+        <div class="contenido-inicio">
+
+            <h1>
+                EDUARDO
+            </h1>
+<img src="c:\Users\Usuario\Desktop\Mis Proyectos\ChatGPT Image 21 jul 2026, 09_30_23 p.m..png" alt="Mi imagen">
+           <style>img {
+    width: 100px;
+    border-radius: 5px;
+}
+
+           </style>
+<h2>
+                Mi página web
+            </h2>
+
+            <p>
+                Bienvenido a mi espacio personal.
+                Aquí podrás conocer un poco sobre mí,
+                mis habilidades y los proyectos que estoy aprendiendo a crear.
+            </p>
+
+            <a
+                href="#sobre"
+                class="boton"
+            >
+                Conocer más
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE MI
+    ========================= -->
+
+    <section id="sobre">
+
+        <h2 class="titulo">
+            Sobre mí
+        </h2>
+
+        <div class="sobre">
+
+            <p>
+
+                Hola, soy Eduardo.
+
+                Estoy aprendiendo sobre tecnología,
+                programación y creación de páginas web.
+
+                Mi objetivo es seguir aprendiendo,
+                crear nuevos proyectos y mejorar
+                mis conocimientos cada día.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HABILIDADES
+    ========================= -->
+
+    <section id="habilidades">
+
+        <h2 class="titulo">
+            Mis habilidades
+        </h2>
+
+        <div class="habilidades">
+
+
+            <div class="habilidad">
+
+                <span>💻</span>
+
+                <h3>
+                    Tecnología
+                </h3>
+
+                <p>
+                    Aprendiendo sobre computadoras
+                    y herramientas digitales.
+                </p>
+
+            </div>
+
+
+            <div class="habilidad">
+
+                <span>🌐</span>
+
+                <h3>
+                    Diseño web
+                </h3>
+
+                <p>
+                    Creando mis primeras páginas
+                    con HTML y CSS.
+                </p>
+
+            </div>
+
+
+            <div class="habilidad">
+
+                <span>🎥</span>
+
+                <h3>
+                    Video
+                </h3>
+
+                <p>
+                    Creación y edición de contenido
+                    audiovisual.
+                </p>
+
+            </div>
+
+
+            <div class="habilidad">
+
+                <span>📡</span>
+
+                <h3>
+                    Tecnología
+                </h3>
+
+                <p>
+                    Interés por redes,
+                    cámaras y nuevas tecnologías.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROYECTOS
+    ========================= -->
+
+    <section id="proyectos">
+
+        <h2 class="titulo">
+            Mis proyectos
+        </h2>
+
+        <div class="proyectos">
+
+
+            <div class="proyecto">
+
+                <h3>
+                    ❤️ Corazón animado
+                </h3>
+
+                <p>
+                    Mi primer proyecto utilizando
+                    HTML y CSS para crear una animación.
+                </p>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>
+                    ⚡ Eduardo
+                </h3>
+
+                <p>
+                    Una animación donde mi nombre
+                    aparece utilizando diferentes efectos.
+                </p>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>
+                    🌐 Mi página web
+                </h3>
+
+                <p>
+                    Este sitio es uno de mis primeros
+                    proyectos de desarrollo web.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================= -->
+
+    <section
+        id="contacto"
+        class="contacto"
+    >
+
+        <h2 class="titulo">
+            Contacto
+        </h2><a href="https://wa.me/50251995051?text=Hola%20Eduardo,%20vi%20tu%20página%20web" target="_blank">
+    <img src="c:\Users\Usuario\Desktop\Mis Proyectos\social-media-whatsapp-realistic-icon-free-free-png.webp" width="25">
+
+    </button>
+</a><button>💬 Escríbeme por WhatsApp</button>
+</a>
+
+        <p>
+            Gracias por visitar mi página.
+        </p>
+
+        <a
+            href="#inicio"
+            class="boton"
+        >
+            Volver arriba
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Eduardo |
+        Mi primera página web
+
+    </footer>
+
+
+</body>
+
+</html>
